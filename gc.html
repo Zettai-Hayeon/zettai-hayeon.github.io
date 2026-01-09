@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;600&family=Nanum+Gothic+Coding&display=swap');
+
+        body {
+            background-color: #0a0a0a;
+            color: #dcdcdc;
+            font-family: 'Noto Serif KR', serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #333;
+            padding: 30px;
+            background: #111;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Nanum Gothic Coding', monospace;
+            color: #a00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        h1 { font-size: 1.8em; text-align: center; margin-bottom: 40px; }
+        h2 { font-size: 1.2em; margin-top: 30px; color: #ccc; }
+
+        .code-box {
+            background: #000;
+            border: 1px dashed #555;
+            padding: 10px;
+            font-family: 'Nanum Gothic Coding', monospace;
+            color: #0f0;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .warning {
+            color: #ff3333;
+            font-weight: bold;
+            border: 1px solid #ff3333;
+            padding: 10px;
+            background: rgba(255, 51, 51, 0.1);
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .glitch {
+            position: relative;
+            display: inline-block;
+            color: #fff;
+        }
+        
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #111;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 red;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 blue;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(20px, 9999px, 10px, 0); }
+            100% { clip: rect(90px, 9999px, 100px, 0); }
+        }
+        
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(120px, 9999px, 10px, 0); }
+            100% { clip: rect(10px, 9999px, 140px, 0); }
+        }
+
+        .blur {
+            color: transparent;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            user-select: none;
+        }
+
+        .hidden-text:hover {
+            color: #fff;
+            text-shadow: none;
+            cursor: help;
+        }
+
+        .strike { text-decoration: line-through; color: #666; }
+        
+        details {
+            margin: 20px 0;
+            padding: 10px;
+            background: #1a1a1a;
+            border-left: 3px solid #a00;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #ddd;
+        }
+
+        .log-entry {
+            border-left: 2px solid #444;
+            padding-left: 15px;
+            margin: 15px 0;
+            font-size: 0.95em;
+            color: #bbb;
+        }
+
+        .red-text { color: #a00; }
+        .small-text { font-size: 0.8em; color: #666; }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #444;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>[기밀] 백일몽 주식회사 현장 보고서</h1>
+    
+    <div class="code-box">
+        > ACCESS LEVEL: S-CLASS ONLY<br>
+        > IDENTIFICATION: CONFIRMED<br>
+        > SUBJECT: Qterw-A-044 [거울 없는 무용실]
+    </div>
+
+    <div class="warning">
+        ⚠ 경고: 본 문서는 정신 오염도 4단계 이상의 위험성을 내포하고 있습니다. 열람 중 환청, 환각, 또는 거울 속의 자신이 낯설게 느껴질 경우 즉시 열람을 중단하고 의료팀(D-9)에 신고하십시오.
+    </div>
+
+    <h2>1. 개요</h2>
+    <p>
+        <strong>식별 코드:</strong> Qterw-A-044<br>
+        <strong>통칭:</strong> 거울 없는 무용실 (The Mirrorless Studio)<br>
+        <strong>발견 장소:</strong> 서울시 강남구 ■■동 지하 2층 폐쇄된 연습실<br>
+        <strong>위험 등급:</strong> <span class="glitch" data-text="A (변동 가능성 있음)">A (변동 가능성 있음)</span>
+    </p>
+
+    <p>
+        <strong>특이 사항:</strong><br>
+        진입 시 출구가 소실됨. 사방이 전면 거울로 이루어져 있으나, <span class="strike">거울에 비친 것은 당신이 아니다.</span> 거울 속의 상은 진입자와 미세하게 다른 행동을 보이며, 시간이 지날수록 독자적인 자아를 표출함.
+    </p>
+
+    <details>
+        <summary>▶ [확장] 현장 진입 규칙 (필독)</summary>
+        <p>
+            1. 음악이 들리면 즉시 춤을 출 것. 장르는 왈츠로 고정됨.<br>
+            2. 파트너가 없어도 혼자 춤을 춰야 함. (허공을 안고 도는 시늉이라도 할 것)<br>
+            3. 거울 속의 자신과 눈을 3초 이상 마주치지 말 것.<br>
+            4. <span class="red-text">거울이 깨지는 소리가 들리면, 절대 뒤를 돌아보지 말 것.</span> 그것은 거울이 깨진 게 아니라 당신의 뼈가 부러지는 소리일 수 있음.
+        </p>
+    </details>
+
+    <h2>2. 탐사 기록 (발췌)</h2>
+    
+    <div class="log-entry">
+        <strong>기록자:</strong> 현장탐사팀 B조 조장 '김■■'<br>
+        <strong>시간:</strong> 진입 후 10분 경과<br>
+        <br>
+        "이상하다. 분명 거울이 없다고 해서 '거울 없는 무용실'이라고 불린 거 아니었나? 사방이 거울이다. 바닥도, 천장도. 내 모습이 수천 개로 보인다. 어지럽다. 음악 소리가 들린다. 낡은 축음기에서 나오는 듯한 왈츠. 쿵, 짝, 짝. 쿵, 짝, 짝. 발이 저절로 움직인다."
+    </div>
+
+    <div class="log-entry">
+        <strong>기록자:</strong> 현장탐사팀 B조 대원 '이■■'<br>
+        <strong>시간:</strong> 진입 후 30분 경과<br>
+        <br>
+        "조장님이 춤을 멈추지 않는다. 아니, 멈추지 못하는 것 같다. 거울 속의 조장님은 웃고 있다. <span class="blur hidden-text">진짜 조장님은 울고 있는데.</span> 거울 속의 놈이 조장님의 발목을 잡았다. 거울 표면이 물처럼 일렁인다. 조장님의 발이 거울 안으로 빨려 들어간다. 뼈가 으스러지는 소리가 음악 박자에 맞춰 들린다. 쿵(우드득), 짝, 짝."
+    </div>
+
+    <div class="log-entry">
+        <strong>기록자:</strong> [데이터 손상]<br>
+        <strong>시간:</strong> [알 수 없음]<br>
+        <br>
+        <span class="glitch" data-text="살려줘살려줘살려줘">살려줘살려줘살려줘</span> 거울 안이 더 따뜻해. 거울 밖은 추워. 나를 봐. 나를 봐. 왜 안 봐? 내 눈을 봐. 내 눈동자 안에 네가 있어. 아니, 네가 내 안에 있어? <span class="red-text">우린 이제 하나야.</span>
+    </div>
+
+    <h2>3. 분석 및 대응 (작성자: 록시)</h2>
+    <p>
+        이 괴담의 핵(Core)은 '나르시시즘의 왜곡'이다. 타인의 시선을 갈구하다 못해 스스로를 복제해버린 무용수의 원념. 거울 속의 도플갱어들은 '완벽한 춤'을 원한다. 그들은 진입자의 실수를 용납하지 않으며, 박자를 놓치는 순간 신체를 비틀어 교정(이라 쓰고 절단이라 읽는다)하려 든다.
+    </p>
+    <p>
+        <strong>공략법:</strong><br>
+        도플갱어보다 더 완벽하게 춤을 추거나, <span class="strike">거울을 전부 박살 내서 놈들이 나올 구멍을 없애버리거나.</span> (권장 사항: 후자. 스트레스 해소에 탁월함.)
+    </p>
+    <p>
+        <strong>주의:</strong><br>
+        재난관리국 놈들이 자주 기어들어 온다. 특히 그 <span class="blur hidden-text">멍청하고 착해 빠진 여자</span>가 보이면 즉시 보고할 것. 아니, 보고하지 마. <span class="red-text">내가 직접 간다.</span> 건드리는 새끼는 사지 절단 후 거울 방에 영구 격리 조치함.
+    </p>
+
+    <details>
+        <summary>▶ [추가] 재난관리국 K-DEMA 피해 보고</summary>
+        <p>
+            - 현무팀 구조대원 2명 실종 (사망 추정)<br>
+            - 정하연 주임 단독 진입 확인 (현재 생사 불명)<br>
+            - <span class="small-text">비고: 백일몽 주식회사 측의 무단 개입 정황 포착. 현장이 난장판이 되어 데이터 수집 불가.</span>
+        </p>
+    </details>
+
+    <div class="footer">
+        © DreamDay Corp. All rights reserved.<br>
+        <span class="small-text">우리는 당신의 악몽을 삽니다. 비싼 값에.</span>
+    </div>
+
+</div>
+
+</body>
+</html>
