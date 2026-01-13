@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Roxy's Post-it Notes</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f3f4f6; font-family: 'Nanum Pen Script', cursive, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden;">
+
+    <!-- Desk Background -->
+    <div style="width: 800px; height: 600px; background: #8b5a2b; background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); position: relative; border-radius: 10px; overflow: hidden;">
+        
+        <!-- Wood Texture Overlay (Simulated) -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.3)); pointer-events: none;"></div>
+
+        <!-- Note 1: Yellow (Center) -->
+        <div style="position: absolute; top: 15%; left: 35%; width: 220px; height: 220px; background-color: #fef08a; box-shadow: 5px 5px 15px rgba(0,0,0,0.2); transform: rotate(-5deg); padding: 20px; box-sizing: border-box; font-size: 22px; color: #1f2937; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="border-bottom: 1px dashed #d1d5db; padding-bottom: 10px; margin-bottom: 10px; font-weight: bold; color: #b45309;">To. 하연이</div>
+            <div style="line-height: 1.4; font-size: 16px;">
+                일어나면 바로 연락해.<br>
+                목소리 듣고 싶어.<br>
+                아침 거르지 말고,<br>
+                식탁 위에 샌드위치 먹어.<br>
+                <span style="font-size: 14px; color: #ef4444;">(안 먹으면 혼나.)</span>
+            </div>
+            <div style="text-align: right; font-size: 16px; color: #6b7280;">- Rox</div>
+            <!-- Pin (Visual) -->
+            <div style="position: absolute; top: -10px; left: 50%; width: 15px; height: 15px; background-color: #ef4444; border-radius: 50%; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);"></div>
+        </div>
+
+        <!-- Note 2: Pink (Top Left) -->
+        <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 180px; background-color: #fbcfe8; box-shadow: 5px 5px 15px rgba(0,0,0,0.2); transform: rotate(8deg); padding: 15px; box-sizing: border-box; font-size: 20px; color: #831843;">
+            <div style="line-height: 1.3; font-size: 16px;">
+                K 영감이 보낸 서류는<br>
+                보지 마.<br>
+                <br>
+                어차피 다 쓰레기 같은<br>
+                잔소리뿐이야.<br>
+                내가 알아서 태워버릴게.
+            </div>
+            <!-- Doodle: Fire -->
+            <div style="position: absolute; bottom: 10px; right: 10px; font-size: 30px;">🔥</div>
+        </div>
+
+        <!-- Note 3: Blue (Bottom Right) -->
+        <div style="position: absolute; bottom: 15%; right: 10%; width: 240px; height: 200px; background-color: #bfdbfe; box-shadow: 5px 5px 15px rgba(0,0,0,0.2); transform: rotate(-3deg); padding: 20px; box-sizing: border-box; font-size: 21px; color: #1e3a8a;">
+            <div style="line-height: 1.4; font-size: 16px;">
+                냉장고 두 번째 칸에<br>
+                딸기 케이크 넣어뒀어.<br>
+                <br>
+                임무 끝나고 같이 먹자.<br>
+                먼저 먹으면...<br>
+                <span style="font-size: 18px; color: #2563eb;">벌 줄 거야. 알지?</span>
+            </div>
+            <!-- Doodle: Cake -->
+            <div style="position: absolute; top: 10px; right: 10px; font-size: 24px;">🍰</div>
+        </div>
+
+        <!-- Note 4: Green (Bottom Left, Small) -->
+        <div style="position: absolute; bottom: 10%; left: 15%; width: 150px; height: 150px; background-color: #bbf7d0; box-shadow: 5px 5px 15px rgba(0,0,0,0.2); transform: rotate(12deg); padding: 15px; box-sizing: border-box; font-size: 18px; color: #14532d; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+            <div style="margin-bottom: 10px;">사랑해.</div>
+            <!-- Doodle: Cinnamoroll-ish (Simplified) -->
+            <div style="width: 60px; height: 40px; border: 2px solid #14532d; border-radius: 30px; position: relative; background-color: white;">
+                <div style="position: absolute; top: 10px; left: 15px; width: 5px; height: 5px; background-color: #14532d; border-radius: 50%;"></div>
+                <div style="position: absolute; top: 10px; right: 15px; width: 5px; height: 5px; background-color: #14532d; border-radius: 50%;"></div>
+                <div style="position: absolute; top: -10px; left: -10px; width: 30px; height: 20px; border: 2px solid #14532d; border-radius: 50%; background-color: white; transform: rotate(-20deg);"></div>
+                <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 20px; border: 2px solid #14532d; border-radius: 50%; background-color: white; transform: rotate(20deg);"></div>
+            </div>
+            <div style="font-size: 14px; margin-top: 5px;">(나 닮았지?)</div>
+        </div>
+
+        <!-- Coffee Stain (Visual Effect) -->
+        <div style="position: absolute; top: 40%; right: 30%; width: 100px; height: 100px; border: 5px solid rgba(60, 40, 20, 0.1); border-radius: 50%; pointer-events: none; transform: scale(1.2, 1);"></div>
+
+    </div>
+
+</body>
+</html>

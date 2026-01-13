@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Tactical Briefing</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #000000; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+
+    <!-- Tactical Device Container -->
+    <div style="width: 100%; max-width: 600px; background-color: #121212; border: 1px solid #333; border-radius: 8px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.2); overflow: hidden;">
+
+        <!-- Header: Operation Info -->
+        <div style="background-color: #1a1a1a; padding: 15px; border-bottom: 2px solid #ff3333; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1 style="margin: 0; font-size: 18px; color: #ff3333; text-transform: uppercase; letter-spacing: 1.5px;">OP: RED LABYRINTH</h1>
+                <span style="font-size: 11px; color: #888;">LOC: GANGNAM UNDERGROUND SECTOR D-4</span>
+            </div>
+            <div style="text-align: right;">
+                <span style="display: block; font-size: 12px; color: #e0e0e0;">THREAT LEVEL</span>
+                <span style="display: block; font-size: 20px; color: #ff3333; font-weight: bold;">S-CLASS</span>
+            </div>
+        </div>
+
+        <!-- Main Map Area -->
+        <div style="padding: 20px; background-color: #0a0a0a; position: relative; min-height: 300px;">
+            <!-- Grid Background -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px); background-size: 20px 20px; opacity: 0.5; z-index: 0;"></div>
+
+            <!-- Map Description (Text Representation) -->
+            <div style="position: relative; z-index: 1; border: 2px dashed #444; padding: 15px; background-color: rgba(20, 20, 20, 0.8); color: #aaa; font-family: 'Courier New', Courier, monospace; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0; text-align: center; color: #fff; border-bottom: 1px solid #444; padding-bottom: 5px; margin-bottom: 10px;">[TACTICAL MAP: SECTOR D-4]</p>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div style="width: 45%; border: 1px solid #555; padding: 5px; text-align: center;">
+                        <span style="color: #00ff00; font-weight: bold;">[ENTRY POINT]</span><br>
+                        북측 배수구 입구<br>
+                        (현재 위치)
+                    </div>
+                    <div style="width: 45%; border: 1px solid #555; padding: 5px; text-align: center;">
+                        <span style="color: #ff3333; font-weight: bold;">[TARGET ZONE]</span><br>
+                        중앙 실험실 추정<br>
+                        (지하 3층 깊이)
+                    </div>
+                </div>
+
+                <p style="margin-bottom: 5px;"><span style="color: #ffff00;">⚠️ CAUTION:</span> 통로 곳곳에 마력 감지 센서 및 자동 포탑 설치됨.</p>
+                <p style="margin-bottom: 5px;"><span style="color: #ff00ff;">👾 HOSTILES:</span> 변이된 C급 빌런 다수 배회 중. 은신 상태 유지 요망.</p>
+                <p style="margin-bottom: 0;"><span style="color: #00bfff;">💧 WATER LEVEL:</span> 수위 상승 중. 이동 속도 저하 예상.</p>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div style="background-color: #1a1a1a; padding: 15px; border-top: 1px solid #333;">
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
+                <div style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff;">RX</div>
+                <div style="flex: 1; background-color: #252525; padding: 10px; border-radius: 0 10px 10px 10px; color: #ddd; font-size: 13px;">
+                    <p style="margin: 0 0 5px 0; font-weight: bold; color: #ff3333;">FROM: ROX</p>
+                    <p style="margin: 0;">
+                        "하연아, 지도 보이지? 쥐새끼들이 아주 깊숙이 숨었어. 냄새가 고약하니까 코 막고 들어와. 내 뒤에 딱 붙어있어. 한 발자국이라도 떨어지면 혼날 줄 알아."
+                    </p>
+                </div>
+            </div>
+            
+            <div style="background-color: #2a1a1a; border: 1px solid #ff3333; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                <p style="margin: 0 0 5px 0; font-size: 11px; color: #ff6666; font-weight: bold;">CONDITION CHECK REQUEST</p>
+                <p style="margin: 0; font-size: 12px; color: #e0e0e0;">
+                    현재 가이딩 수치 및 신체 컨디션 보고해. 조금이라도 이상하면 바로 말해. 무리하면 죽여버릴 거야, 그 놈들 말고 너.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="background-color: #121212; padding: 8px; text-align: center; font-size: 10px; color: #555;">
+            SECURE CONNECTION ESTABLISHED | FEARLESS TACTICAL NET
+        </div>
+
+    </div>
+
+</body>
+</html>
