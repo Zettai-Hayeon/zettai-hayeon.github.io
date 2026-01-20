@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #b2c7da;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .chat-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #b2c7da;
+        }
+        .date-line {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 12px;
+            color: #556677;
+            background-color: rgba(0,0,0,0.1);
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 10px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 20px;
+            background-color: #ddd;
+            background-image: url('<https://via.placeholder.com/50/333333/FFFFFF?text=R>'); /* 임시 이미지 */
+            background-size: cover;
+            margin-right: 15px;
+            border: 2px solid #fff;
+        }
+        .profile-name {
+            font-weight: bold;
+            font-size: 16px;
+            color: #000;
+        }
+        .message-row {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-end;
+        }
+        .message-row.my-message {
+            justify-content: flex-end;
+        }
+        .message-row.other-message {
+            justify-content: flex-start;
+        }
+        .profile-thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 15px;
+            background-color: #333; /* 록시의 이미지 색상 대체 */
+            margin-right: 8px;
+            flex-shrink: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+        }
+        .message-content {
+            max-width: 70%;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+            word-wrap: break-word;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .other-message .message-content {
+            background-color: #ffffff;
+            color: #000000;
+            border-top-left-radius: 2px;
+        }
+        .my-message .message-content {
+            background-color: #ffeeb3; /* 시에나의 말풍선 색상 (노란색 계열) */
+            color: #000000;
+            border-top-right-radius: 2px;
+        }
+        .message-time {
+            font-size: 10px;
+            color: #556677;
+            margin: 0 5px;
+            min-width: 35px;
+        }
+        .my-message .message-time {
+            text-align: right;
+        }
+        .name-label {
+            font-size: 12px;
+            color: #556677;
+            margin-bottom: 4px;
+            margin-left: 2px;
+        }
+        .kakao-pay-bubble {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 0;
+            overflow: hidden;
+            width: 220px;
+            border: 1px solid #e0e0e0;
+        }
+        .pay-header {
+            background-color: #fee500;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .pay-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fee500;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .pay-text {
+            font-weight: bold;
+            font-size: 15px;
+            color: #000;
+        }
+        .pay-amount {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .pay-footer {
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .unread {
+            color: #fee500;
+            font-size: 10px;
+            margin-bottom: 2px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="date-line">202X년 10월 14일 월요일</div>
+
+    <!-- 시에나의 메시지 -->
+    <div class="message-row my-message">
+        <div class="message-time">오후 2:13</div>
+        <div class="message-content">록시... 저 오늘 기분이 너무 안 좋아요... 💧</div>
+    </div>
+
+    <div class="message-row my-message">
+        <div class="message-time">오후 2:13</div>
+        <div class="message-content">진짜 너무너무 우울해서 땅 파고 들어갈 것 같아요...</div>
+    </div>
+
+    <div class="message-row my-message">
+        <div class="message-time">오후 2:14</div>
+        <div class="message-content">어느 정도냐면... 록시가 10만원 보내줘도 다시 돌려줄 정도로 최악이에요... 😢</div>
+    </div>
+
+    <div class="message-row my-message">
+        <div class="message-time">오후 2:14</div>
+        <div class="message-content">진짜라니까요? 한번 보내봐요... 바로 돌려줄게요... 😞</div>
+    </div>
+
+    <!-- 록시의 메시지 -->
+    <div class="message-row other-message">
+        <div class="profile-thumb">R</div>
+        <div>
+            <div class="name-label">내 록시🤍</div>
+            <div class="message-content">하연아.</div>
+        </div>
+        <div class="message-time">오후 2:15</div>
+    </div>
+
+    <div class="message-row other-message">
+        <div class="profile-thumb">R</div>
+        <div>
+            <div class="message-content">누가 우리 하연이 기분을 이렇게 망쳤어? K 그 늙은이가 또 쓸데없는 소리 했나?</div>
+        </div>
+        <div class="message-time">오후 2:15</div>
+    </div>
+
+    <div class="message-row other-message">
+        <div class="profile-thumb">R</div>
+        <div>
+            <div class="message-content">아니면 점심 맛없었어? 내가 도시락 싸준다고 했잖아.</div>
+        </div>
+        <div class="message-time">오후 2:16</div>
+    </div>
+
+    <div class="message-row other-message">
+        <div class="profile-thumb">R</div>
+        <div>
+            <div class="message-content">근데 10만원으로 기분이 풀릴 리가 없잖아. 나를 너무 싸게 보는 거 아니야?</div>
+        </div>
+        <div class="message-time">오후 2:16</div>
+    </div>
+
+    <!-- 송금 메시지 -->
+    <div class="message-row other-message">
+        <div class="profile-thumb">R</div>
+        <div>
+            <div class="kakao-pay-bubble">
+                <div class="pay-header">
+                    <div class="pay-icon">￦</div>
+                    <div>
+                        <div class="pay-text">송금 보냈어요</div>
+                        <div class="pay-amount">100,000,000원</div>
+                    </div>
+                </div>
+                <div class="pay-footer">받기</div>
+            </div>
+        </div>
+        <div class="message-time">오후 2:17</div>
+    </div>
+
+    <div class="message-row other-message">
+        <div class="profile-thumb">R</div>
+        <div>
+            <div class="message-content">이거 받고도 안 풀리면 말해. 지금 바로 데리러 갈게.</div>
+        </div>
+        <div class="message-time">오후 2:17</div>
+    </div>
+
+    <div class="message-row other-message">
+        <div class="profile-thumb">R</div>
+        <div>
+            <div class="message-content">아니, 그냥 지금 갈게. 3분만 기다려.</div>
+        </div>
+        <div class="message-time">오후 2:17</div>
+    </div>
+
+    <!-- 시에나의 당황한 반응 -->
+    <div class="message-row my-message">
+        <div class="message-time">오후 2:18</div>
+        <div class="message-content">?????? 록시???? 0이 몇 개예요??? 😱</div>
+    </div>
+
+    <div class="message-row my-message">
+        <div class="message-time">오후 2:18</div>
+        <div class="message-content">아니 잠깐만요 오지 마세요!! 저 일하는 중이에요!!! 💦💦</div>
+    </div>
+
+    <div class="message-row my-message">
+        <div class="message-time">오후 2:18</div>
+        <div class="message-content">10만원이라니까 왜 1억을 보내요!!!! ㅠㅠㅠㅠ</div>
+    </div>
+
+     <div class="message-row my-message">
+        <div class="message-time">오후 2:19</div>
+        <div class="message-content">록시?? 읽씹하지 마요!!! 록시!!!!</div>
+    </div>
+
+</div>
+
+</body>
+</html>
