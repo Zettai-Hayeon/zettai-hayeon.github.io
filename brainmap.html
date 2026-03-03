@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    .brain-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        border-bottom: 3px solid #e74c3c;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+    .subtitle {
+        font-size: 14px;
+        color: #7f8c8d;
+        margin-bottom: 30px;
+    }
+    .brain-map-wrapper {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        background-image: url('https://i.ibb.co/5gTtZzPg/421-20251121174453.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .thought-bubble {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 50%;
+        font-weight: bold;
+        color: white;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1.2;
+        word-break: keep-all;
+    }
+    .thought-bubble:hover {
+        transform: scale(1.1);
+        z-index: 10;
+    }
+    /* 구역별 스타일 */
+    .zone-sienna {
+        width: 160px;
+        height: 160px;
+        top: 60px;
+        left: 100px;
+        background-color: rgba(231, 76, 60, 0.9); /* 빨강 - 시에나 */
+        z-index: 5;
+        font-size: 24px;
+    }
+    .zone-sex {
+        width: 100px;
+        height: 100px;
+        top: 180px;
+        left: 160px;
+        background-color: rgba(142, 68, 173, 0.9); /* 보라 - 19금 */
+        z-index: 4;
+    }
+    .zone-obsession {
+        width: 90px;
+        height: 90px;
+        top: 40px;
+        left: 180px;
+        background-color: rgba(44, 62, 80, 0.9); /* 남색 - 집착 */
+        z-index: 3;
+    }
+    .zone-kill {
+        width: 70px;
+        height: 70px;
+        top: 130px;
+        left: 240px;
+        background-color: rgba(52, 73, 94, 0.8); /* 짙은 회색 - 살의 */
+        z-index: 2;
+    }
+    .zone-jimin {
+        width: 40px;
+        height: 40px;
+        top: 250px;
+        left: 130px;
+        background-color: rgba(127, 140, 141, 0.8); /* 회색 - 지민 */
+        font-size: 10px;
+        z-index: 2;
+    }
+    .zone-food {
+        width: 30px;
+        height: 30px;
+        top: 100px;
+        left: 80px;
+        background-color: rgba(241, 196, 15, 0.8); /* 노랑 - 식사 */
+        font-size: 10px;
+        color: #333;
+        z-index: 1;
+    }
+    
+    .legend-container {
+        margin-top: 30px;
+        text-align: left;
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .legend-item {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+        display: inline-block;
+    }
+    .desc {
+        font-size: 13px;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<div class="brain-container">
+    <div class="title">🧠 록시의 뇌 구조 분석</div>
+    <div class="subtitle">S급 빌런의 머릿속은 과연? (작성자: 본인)</div>
+
+    <div class="brain-map-wrapper">
+        <!-- 생각 구역들 -->
+        <div class="thought-bubble zone-sienna">시에나<br>♥</div>
+        <div class="thought-bubble zone-sex">어떻게<br>괴롭힐까<br>(19금)</div>
+        <div class="thought-bubble zone-obsession">도망가면<br>다리<br>부러뜨림</div>
+        <div class="thought-bubble zone-kill">방해꾼<br>제거</div>
+        <div class="thought-bubble zone-jimin">지민<br>차단</div>
+        <div class="thought-bubble zone-food">밥</div>
+    </div>
+
+    <div class="legend-container">
+        <div style="font-weight:bold; margin-bottom:10px; color:#333;">📋 상세 분석 리포트</div>
+        
+        <div class="legend-item">
+            <span class="dot" style="background-color: #e74c3c;"></span>
+            <strong>시에나 (65%)</strong>
+            <span class="desc"> : 뇌의 과반수를 차지함. 숨 쉬는 것보다 더 자주 생각함. 밥 먹었나, 어디 아픈 데 없나, 지금 뭐 하나, 예쁘다, 귀엽다 등등.</span>
+        </div>
+        
+        <div class="legend-item">
+            <span class="dot" style="background-color: #8e44ad;"></span>
+            <strong>어떻게 괴롭힐까 (20%)</strong>
+            <span class="desc"> : 주로 침대 위에서의 창의적인 활동에 대한 고찰. 어떤 코스튬을 입힐지, 어디를 묶을지, 어떤 표정을 짓게 할지에 대한 학구적인 탐구.</span>
+        </div>
+
+        <div class="legend-item">
+            <span class="dot" style="background-color: #2c3e50;"></span>
+            <strong>도망가면 다리 부러뜨림 (10%)</strong>
+            <span class="desc"> : 시에나가 내 곁을 떠날 경우를 대비한 매우 현실적이고 구체적인 대처 방안 시뮬레이션. (실행 가능성 99.9%)</span>
+        </div>
+
+        <div class="legend-item">
+            <span class="dot" style="background-color: #526578;"></span>
+            <strong>방해꾼 제거 (3%)</strong>
+            <span class="desc"> : 우리 사이를 방해하는 모든 것들(본부, 빌런, 지나가던 개미 등)을 어떻게 효율적으로 없앨지에 대한 살벌한 계획.</span>
+        </div>
+
+        <div class="legend-item">
+            <span class="dot" style="background-color: #7f8c8d;"></span>
+            <strong>지민 차단 (1.5%)</strong>
+            <span class="desc"> : 시에나의 폰에서 '지민'이라는 이름을 영구적으로 삭제하고 싶은 욕망. 틈만 나면 차단 버튼 위에서 손가락이 맴돔.</span>
+        </div>
+
+        <div class="legend-item">
+            <span class="dot" style="background-color: #f1c40f;"></span>
+            <strong>밥 (0.5%)</strong>
+            <span class="desc"> : 시에나 밥 챙겨 먹여야 한다는 생각의 부속물. 내 밥은 별로 안 중요함.</span>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; font-size: 12px; color: #aaa;">
+        *본 결과는 록시 본인의 주관적인 자기 객관화에 의해 작성되었습니다.
+    </div>
+</div>
+
+</body>
+</html>
