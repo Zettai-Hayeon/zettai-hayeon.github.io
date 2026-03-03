@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #2a2a2a;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        overflow: hidden;
+    }
+    .header {
+        background: linear-gradient(135deg, #000000 0%, #434343 100%);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #d4af37;
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    .profile-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .character-card {
+        background-color: #333;
+        border-radius: 10px;
+        width: 45%;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+    }
+    .character-card:hover {
+        transform: translateY(-5px);
+    }
+    .card-header {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 10px 10px 0 0;
+    }
+    .roxy-header {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        border-bottom: 2px solid #e74c3c;
+    }
+    .sienna-header {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+    }
+    .stats-container {
+        padding: 15px;
+    }
+    .stat-row {
+        margin-bottom: 10px;
+    }
+    .stat-label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .progress-bar-bg {
+        background-color: #444;
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .progress-bar-fill {
+        height: 100%;
+        border-radius: 5px;
+        transition: width 1s ease-in-out;
+    }
+    .roxy-fill {
+        background: linear-gradient(90deg, #e74c3c, #c0392b);
+    }
+    .sienna-fill {
+        background: linear-gradient(90deg, #3498db, #2980b9);
+    }
+    .radar-chart-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+        background: radial-gradient(circle, #333 0%, #222 70%);
+        border-radius: 50%;
+        border: 1px solid #555;
+    }
+    .radar-axis {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: #555;
+        transform-origin: center;
+    }
+    .radar-label {
+        position: absolute;
+        font-size: 12px;
+        color: #aaa;
+        transform: translate(-50%, -50%);
+    }
+    .radar-polygon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 10%, 90% 35%, 80% 85%, 20% 85%, 10% 35%); /* Dummy shape for visual */
+        opacity: 0.6;
+    }
+    .roxy-polygon {
+        background-color: rgba(231, 76, 60, 0.5);
+        border: 2px solid #e74c3c;
+        clip-path: polygon(50% 5%, 95% 35%, 85% 90%, 15% 90%, 5% 35%); /* High stats */
+    }
+    .sienna-polygon {
+        background-color: rgba(52, 152, 219, 0.5);
+        border: 2px solid #3498db;
+        clip-path: polygon(50% 20%, 80% 45%, 70% 80%, 30% 80%, 20% 45%); /* Balanced stats */
+    }
+    .description-box {
+        background-color: #333;
+        padding: 15px;
+        margin: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #d4af37;
+    }
+    .desc-title {
+        color: #d4af37;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .footer {
+        text-align: center;
+        padding: 10px;
+        font-size: 12px;
+        color: #666;
+        border-top: 1px solid #444;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>[FEARLESS] S-CLASS PAIR ANALYSIS</h1>
+        <p>CONFIDENTIAL REPORT: ROXY & SIENNA</p>
+    </div>
+
+    <!-- Radar Chart Visualization (CSS Art approximation) -->
+    <div style="text-align: center; margin-top: 20px;">
+        <div class="radar-chart-container">
+            <!-- Axes -->
+            <div class="radar-axis" style="transform: translate(-50%, -50%) rotate(0deg);"></div>
+            <div class="radar-axis" style="transform: translate(-50%, -50%) rotate(72deg);"></div>
+            <div class="radar-axis" style="transform: translate(-50%, -50%) rotate(144deg);"></div>
+            <div class="radar-axis" style="transform: translate(-50%, -50%) rotate(216deg);"></div>
+            <div class="radar-axis" style="transform: translate(-50%, -50%) rotate(288deg);"></div>
+            
+            <!-- Labels -->
+            <div class="radar-label" style="top: 5%; left: 50%;">POWER</div>
+            <div class="radar-label" style="top: 35%; left: 95%;">CONTROL</div>
+            <div class="radar-label" style="top: 90%; left: 80%;">STAMINA</div>
+            <div class="radar-label" style="top: 90%; left: 20%;">MENTAL</div>
+            <div class="radar-label" style="top: 35%; left: 5%;">TECHNIQUE</div>
+
+            <!-- Data Polygons -->
+            <div class="radar-polygon roxy-polygon"></div>
+            <div class="radar-polygon sienna-polygon"></div>
+        </div>
+        <p style="font-size: 12px; color: #aaa;">🟥 ROXY (Sentinel) / 🟦 SIENNA (Guide)</p>
+    </div>
+
+    <div class="profile-section">
+        <!-- ROXY CARD -->
+        <div class="character-card">
+            <div class="card-header roxy-header">ROXY (S-Class Sentinel)</div>
+            <div class="stats-container">
+                <div class="stat-row">
+                    <span class="stat-label">파괴력 (Destructive Power) - SSS</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill roxy-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">생명력 흡수 (Vital Drain) - SS</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill roxy-fill" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">정신력 (Mental Strength) - A (불안정)</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill roxy-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">집착도 (Obsession) - MAX</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill roxy-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIENNA CARD -->
+        <div class="character-card">
+            <div class="card-header sienna-header">SIENNA (S-Class Guide)</div>
+            <div class="stats-container">
+                <div class="stat-row">
+                    <span class="stat-label">가이딩 효율 (Guiding Efficiency) - SSS</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill sienna-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">안정화 범위 (Stabilization Range) - SS</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill sienna-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">정신적 포용력 (Mental Embrace) - EX</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill sienna-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">헌신도 (Devotion) - MAX</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill sienna-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description-box">
+        <span class="desc-title">📝 상세 분석 보고서 (Detailed Analysis)</span>
+        
+        <p><strong>[ROXY: The Predator]</strong><br>
+        압도적인 신체 능력과 살상력을 보유한 전투형 센티넬. 'Vital Drain' 능력을 통해 타인의 생명력을 흡수하여 무한에 가까운 전투 지속력을 가짐. 그러나 정신적으로 매우 불안정하며, 가이딩 거부 반응이 심했으나 시에나 한정으로 완벽한 수용성을 보임. 시에나에 대한 병적인 집착이 전투력의 원동력이자 유일한 약점.</p>
+        
+        <hr style="border-color: #444;">
+        
+        <p><strong>[SIENNA: The Deep Sea]</strong><br>
+        희귀한 '심해형' 가이딩 파장을 보유. 접촉 시 대상에게 깊은 바닷속에 잠긴 듯한 고요함과 절대적인 안정을 제공함. 폭주 직전의 센티넬조차 강제로 진정시킬 수 있는 강력한 억제력을 가짐. 록시의 광기 어린 파장을 유일하게 감싸 안을 수 있는 존재이며, 그녀의 가이딩은 단순한 회복을 넘어 록시의 이성을 붙잡아두는 족쇄 역할을 함.</p>
+        
+        <hr style="border-color: #444;">
+
+        <p><strong>[PAIR SYNERGY: Fatal Bond]</strong><br>
+        서로의 생명력을 공유하는 기형적인 공생 관계. 록시는 시에나의 가이딩 없이는 폭주하며, 시에나는 록시의 집착 없이는 존재 의의를 상실함. 전투 시 록시가 전방에서 학살을 자행하면, 시에나가 후방에서 그 광기를 제어하고 생명력을 공급하는 완벽한 공수 밸런스를 보여줌. <span style="color: #e74c3c;">단, 시에나에게 위협이 가해질 경우 록시의 통제 불능 상태가 발생할 수 있음 (경계 요망).</span></p>
+    </div>
+
+    <div class="footer">
+        FEARLESS HQ - S-Class Management Division | Authorized Personnel Only
+    </div>
+</div>
+
+</body>
+</html>
+
