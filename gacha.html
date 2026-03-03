@@ -1,0 +1,174 @@
+
+
+<div style="font-family: 'Noto Sans KR', sans-serif; background-color: #1a1a2e; color: #fff; padding: 40px; border-radius: 20px; text-align: center; max-width: 800px; margin: 0 auto; box-shadow: 0 0 50px rgba(162, 155, 254, 0.2);">
+    
+    <h2 style="color: #a29bfe; text-shadow: 0 0 10px rgba(162, 155, 254, 0.5); margin-bottom: 10px;">✨ FEARLESS : DESTINY GACHA ✨</h2>
+    <p style="color: #dfe6e9; font-size: 14px; margin-bottom: 40px;">운명의 카드를 뒤집어 당신의 파트너를 확인하세요!</p>
+
+    <!-- 가챠 버튼 -->
+    <button onclick="document.getElementById('card-container').style.display = 'flex'; this.style.display = 'none';" style="background: linear-gradient(45deg, #6c5ce7, #a29bfe); border: none; padding: 15px 40px; border-radius: 50px; color: white; font-weight: bold; font-size: 18px; cursor: pointer; box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4); transition: all 0.3s ease; animation: pulse 2s infinite;">
+        💎 10회 소환 (무료)
+    </button>
+
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(162, 155, 254, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(162, 155, 254, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(162, 155, 254, 0); }
+        }
+        .card-flip-container {
+            perspective: 1000px;
+            width: 140px;
+            height: 220px;
+            cursor: pointer;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .card-flip-container:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .card-front {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            border: 2px solid #b2bec3;
+        }
+        .card-back {
+            background-color: #fff;
+            color: #333;
+            transform: rotateY(180deg);
+            font-size: 12px;
+            overflow: hidden;
+        }
+        /* 등급별 스타일 */
+        .rank-ur .card-front { background: linear-gradient(135deg, #000000, #434343); border: 2px solid #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); }
+        .rank-ssr .card-front { background: linear-gradient(135deg, #ff9a9e, #fad0c4); border: 2px solid #ff7675; box-shadow: 0 0 15px rgba(255, 118, 117, 0.5); }
+        .rank-sr .card-front { background: linear-gradient(135deg, #a18cd1, #fbc2eb); border: 2px solid #a29bfe; }
+        .rank-r .card-front { background: linear-gradient(135deg, #84fab0, #8fd3f4); border: 2px solid #00b894; }
+        .rank-n .card-front { background: linear-gradient(135deg, #e0c3fc, #8ec5fc); border: 2px solid #74b9ff; }
+    </style>
+
+    <!-- 카드 결과 컨테이너 (처음엔 숨김) -->
+    <div id="card-container" style="display: none; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+        
+        <!-- 1. UR [타락한 성자] 록시 -->
+        <div class="card-flip-container rank-ur">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div style="color: #ffd700; font-weight: bold; font-size: 20px; margin-bottom: 5px;">UR ★★★★★</div>
+                    <div style="font-size: 16px; font-weight: bold; color: white;">[타락한 성자]<br>록시</div>
+                    <div style="font-size: 11px; color: #b2bec3; margin-top: 10px;">"도망칠 수 있을 거라 생각했어?"</div>
+                </div>
+                <div class="card-back">
+                    <strong style="color: #2d3436; font-size: 14px;">[타락한 성자] 록시</strong>
+                    <hr style="width: 80%; border: 0; border-top: 1px solid #eee; margin: 5px 0;">
+                    <p style="margin: 0; line-height: 1.4;">
+                        <b>속성:</b> 어둠/지배<br>
+                        <b>스킬:</b> <span style="color: #d63031;">[절대 복종]</span><br>
+                        적 전체를 '공포' 상태로 만들고, 아군 '시에나'의 모든 어그로를 자신에게 고정시킴.<br>
+                        <br>
+                        <i style="color: #636e72;">"내 여자를 건드리는 벌레들은... 전부 밟아 죽여주지."</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SSR [순백의 구원] 시에나 -->
+        <div class="card-flip-container rank-ssr">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div style="color: #ff7675; font-weight: bold; font-size: 20px; margin-bottom: 5px;">SSR ★★★★</div>
+                    <div style="font-size: 16px; font-weight: bold; color: white;">[순백의 구원]<br>시에나</div>
+                    <div style="font-size: 11px; color: #ffeaa7; margin-top: 10px;">"당신을... 포기하지 않아요."</div>
+                </div>
+                <div class="card-back">
+                    <strong style="color: #d63031; font-size: 14px;">[순백의 구원] 시에나</strong>
+                    <hr style="width: 80%; border: 0; border-top: 1px solid #eee; margin: 5px 0;">
+                    <p style="margin: 0; line-height: 1.4;">
+                        <b>속성:</b> 빛/치유<br>
+                        <b>스킬:</b> <span style="color: #e84393;">[성녀의 눈물]</span><br>
+                        아군 전체 체력 100% 회복. '록시'가 파티에 있을 시, 록시의 공격력 200% 증가 및 폭주 제어.<br>
+                        <br>
+                        <i style="color: #636e72;">"록시가 아무리 나빠도... 제가 사랑으로 감싸줄게요."</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SR [지나가던] 시나모롤 -->
+        <div class="card-flip-container rank-sr">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div style="color: #a29bfe; font-weight: bold; font-size: 18px; margin-bottom: 5px;">SR ★★★</div>
+                    <div style="font-size: 16px; font-weight: bold; color: white;">[말랑말랑]<br>시나모롤</div>
+                    <div style="font-size: 11px; color: #dfe6e9; margin-top: 10px;">(꼬리를 살랑거림)</div>
+                </div>
+                <div class="card-back">
+                    <strong style="color: #6c5ce7; font-size: 14px;">[말랑말랑] 시나모롤</strong>
+                    <hr style="width: 80%; border: 0; border-top: 1px solid #eee; margin: 5px 0;">
+                    <p style="margin: 0; line-height: 1.4;">
+                        <b>속성:</b> 귀여움<br>
+                        <b>스킬:</b> <span style="color: #74b9ff;">[힐링 타임]</span><br>
+                        바라보기만 해도 스트레스 감소. 시에나가 록시를 닮았다고 주장하는 생명체.<br>
+                        <br>
+                        <i style="color: #636e72;">(록시가 이 카드를 질투합니다.)</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. R [눈치 없는] 지민 -->
+        <div class="card-flip-container rank-r">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div style="color: #00b894; font-weight: bold; font-size: 16px; margin-bottom: 5px;">R ★★</div>
+                    <div style="font-size: 15px; font-weight: bold; color: white;">[눈치 제로]<br>지민</div>
+                    <div style="font-size: 11px; color: #dfe6e9; margin-top: 10px;">"하연아! 톡 좀 봐!"</div>
+                </div>
+                <div class="card-back">
+                    <strong style="color: #00cec9; font-size: 14px;">[눈치 제로] 지민</strong>
+                    <hr style="width: 80%; border: 0; border-top: 1px solid #eee; margin: 5px 0;">
+                    <p style="margin: 0; line-height: 1.4;">
+                        <b>속성:</b> 방해<br>
+                        <b>스킬:</b> <span style="color: #0984e3;">[부재중 전화]</span><br>
+                        중요한 순간에 전화를 걸어 분위기를 깬다. 록시의 '살의' 게이지를 빠르게 충전시킴.<br>
+                        <br>
+                        <i style="color: #636e72;">"아니 근데 그 남자 진짜 위험하다니까?"</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. N [평범한] C급 빌런 -->
+        <div class="card-flip-container rank-n">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div style="color: #74b9ff; font-weight: bold; font-size: 16px; margin-bottom: 5px;">N ★</div>
+                    <div style="font-size: 15px; font-weight: bold; color: white;">[지나가던]<br>C급 빌런</div>
+                    <div style="font-size: 11px; color: #dfe6e9; margin-top: 10px;">"으악! 살려줘!"</div>
+                </div>
+                <div class="card-back">
+                    <strong style="color: #0984e3; font-size: 14px;">[지나가던] C급 빌런</strong>
+                    <hr style="width: 80%; border: 0; border-top: 1px solid #eee; margin: 5px 0;">
+                    <p style="margin: 0; line-height: 1.4;">
+                        <b>속성:</b> 경험치<br>
+                        <b>스킬:</b> <span style="color: #636e72;">[빠른 퇴장]</span><br>
