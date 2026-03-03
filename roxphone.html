@@ -1,0 +1,332 @@
+<html>
+<body>
+<div style="width: 380px; height: 780px; background-color: #1a1a1a; border-radius: 40px; border: 8px solid #333; margin: auto; position: relative; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
+    
+    <!-- 펀치홀 카메라 -->
+    <div style="width: 120px; height: 30px; background-color: #000; position: absolute; top: 0; left: 50%; transform: translateX(-50%); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 100;"></div>
+
+    <!-- 배경화면 (이미지 대신 설명과 분위기 연출) -->
+    <div style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: linear-gradient(to bottom, #2c3e50, #000000); z-index: 0;">
+        <!-- 배경화면 설명 텍스트 (실제로는 이미지지만 여기선 텍스트로 묘사) -->
+        <div style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 80%; text-align: center; color: rgba(255,255,255,0.1); font-size: 0.8em; pointer-events: none;">
+            [배경화면: 잠든 시에나의 옆모습 클로즈업. 흑백 필터. 그녀의 속눈썹과 살짝 벌어진 입술이 강조됨. 록시의 손가락이 그녀의 뺨을 스치고 있는 구도.]
+        </div>
+        <!-- 분위기 연출용 흐릿한 빛 -->
+        <div style="position: absolute; top: 10%; left: 10%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);"></div>
+    </div>
+
+    <!-- 상단 상태바 -->
+    <div style="position: absolute; top: 10px; left: 0; width: 100%; height: 30px; display: flex; justify-content: space-between; padding: 0 25px; box-sizing: border-box; color: #fff; font-size: 12px; font-weight: 600; z-index: 10;">
+        <span>12:30</span>
+        <div style="display: flex; gap: 5px;">
+            <span>LTE</span>
+            <span>🔋 98%</span>
+        </div>
+    </div>
+
+    <!-- 위젯 영역 -->
+    <div style="position: absolute; top: 80px; left: 20px; width: calc(100% - 40px); z-index: 10;">
+        <!-- D-Day 위젯 -->
+        <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 20px; padding: 15px; color: #fff; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-size: 12px; opacity: 0.8;">My Everything</div>
+            <div style="font-size: 24px; font-weight: bold; margin-top: 5px;">시에나와 함께한 지</div>
+            <div style="font-size: 32px; font-weight: bold; text-align: right; color: #ff9a9e;">D+184</div>
+        </div>
+        
+        <!-- 위치 추적 위젯 (커스텀) -->
+        <div style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 15px; color: #fff; border: 1px solid rgba(255,0,0,0.3);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 14px;">📍 시에나 위치 실시간</span>
+                <span style="font-size: 10px; color: #00ff00;">● Online</span>
+            </div>
+            <div style="margin-top: 10px; font-size: 12px; color: #ccc;">
+                Fearless 본부 > B1 사격 훈련장<br>
+                <span style="font-size: 10px; opacity: 0.6;">(심박수: 88bpm - 안정)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 앱 아이콘 영역 -->
+    <div style="position: absolute; bottom: 100px; left: 20px; width: calc(100% - 40px); display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; z-index: 10;">
+        <!-- 앱 1: Fearless 보안 -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: #333; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 1px solid #555;">
+                🔒
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">Fearless</span>
+        </div>
+        <!-- 앱 2: CCTV -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: #000; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 1px solid #ff0000;">
+                📹
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">CAM</span>
+        </div>
+        <!-- 앱 3: 녹음기 -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: #222; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                🎙️
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">Voice</span>
+        </div>
+        <!-- 앱 4: 갤러리 (잠금) -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: linear-gradient(45deg, #ff9a9e, #fad0c4); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                🖼️
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">Sienna</span>
+        </div>
+        <!-- 앱 5: 주식/금융 -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: #1e3c72; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                📈
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">Assets</span>
+        </div>
+         <!-- 앱 6: 시나모롤 게임 (숨김 폴더 아님) -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                ☁️
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">Cinnamoroll</span>
+        </div>
+         <!-- 앱 7: 건강 관리 -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: #ff4b4b; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                ❤️
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">Health</span>
+        </div>
+         <!-- 앱 8: 설정 -->
+        <div style="text-align: center;">
+            <div style="width: 55px; height: 55px; background: #555; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                ⚙️
+            </div>
+            <span style="font-size: 10px; color: #fff; margin-top: 5px; display: block;">Settings</span>
+        </div>
+    </div>
+
+    <!-- 하단 독 바 -->
+    <div style="position: absolute; bottom: 20px; left: 20px; width: calc(100% - 40px); height: 75px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border-radius: 25px; display: flex; justify-content: space-around; align-items: center; z-index: 10;">
+        <!-- 전화 -->
+        <div style="width: 50px; height: 50px; background: #4cd964; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+            📞
+        </div>
+        <!-- 메시지 -->
+        <div style="width: 50px; height: 50px; background: #4cd964; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+            💬
+            <div style="position: absolute; top: 10px; right: 100px; background: red; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</div>
+        </div>
+        <!-- 인터넷 -->
+        <div style="width: 50px; height: 50px; background: #007aff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+            🌐
+        </div>
+        <!-- 음악 -->
+        <div style="width: 50px; height: 50px; background: #ff2d55; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+            🎵
+        </div>
+    </div>
+
+    <!-- 하단 홈 인디케이터 -->
+    <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 120px; height: 5px; background: #fff; border-radius: 10px; z-index: 20;"></div>
+</div>
+
+<div style="width: 380px; height: 780px; background-color: #f5f5f7; border-radius: 40px; border: 8px solid #333; margin: auto; position: relative; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 20px 50px rgba(0,0,0,0.8); color: #000;">
+
+    <!-- 펀치홀 카메라 -->
+    <div style="width: 120px; height: 30px; background-color: #000; position: absolute; top: 0; left: 50%; transform: translateX(-50%); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 100;"></div>
+
+    <!-- 상단 상태바 -->
+    <div style="position: absolute; top: 10px; left: 0; width: 100%; height: 30px; display: flex; justify-content: space-between; padding: 0 25px; box-sizing: border-box; color: #000; font-size: 12px; font-weight: 600; z-index: 10;">
+        <span>12:40</span>
+        <div style="display: flex; gap: 5px;">
+            <span>LTE</span>
+            <span>🔋 97%</span>
+        </div>
+    </div>
+
+    <!-- 앱 헤더 -->
+    <div style="position: absolute; top: 40px; left: 0; width: 100%; height: 60px; background: #fff; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; padding: 0 20px; z-index: 5;">
+        <span style="font-size: 24px; margin-right: 15px;">🛍️</span>
+        <span style="font-size: 18px; font-weight: bold;">My Cart</span>
+        <span style="margin-left: auto; font-size: 14px; color: #888;">Items: 5</span>
+    </div>
+
+    <!-- 장바구니 리스트 영역 -->
+    <div style="position: absolute; top: 100px; left: 0; width: 100%; height: 580px; overflow-y: auto; padding: 10px 0; background: #f5f5f7;">
+        
+        <!-- 아이템 1 -->
+        <div style="background: #fff; margin: 10px 20px; padding: 15px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center;">
+            <div style="width: 60px; height: 60px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 30px;">💍</div>
+            <div style="margin-left: 15px; flex: 1;">
+                <div style="font-size: 14px; font-weight: bold; color: #333;">[Custom Order] Platinum Couple Rings</div>
+                <div style="font-size: 12px; color: #888; margin-top: 3px;">옵션: 안쪽 각인 'R & S Forever', 다이아몬드 세팅</div>
+                <div style="font-size: 14px; font-weight: bold; color: #ff2d55; margin-top: 5px;">₩ 15,000,000</div>
+            </div>
+            <div style="font-size: 18px; color: #ccc;">✖</div>
+        </div>
+
+        <!-- 아이템 2 -->
+        <div style="background: #fff; margin: 10px 20px; padding: 15px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center;">
+            <div style="width: 60px; height: 60px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 30px;">🧸</div>
+            <div style="margin-left: 15px; flex: 1;">
+                <div style="font-size: 14px; font-weight: bold; color: #333;">Giant Cinnamoroll Plush (Limited Edition)</div>
+                <div style="font-size: 12px; color: #888; margin-top: 3px;">옵션: 150cm 특대형, 푹신한 감촉</div>
+                <div style="font-size: 14px; font-weight: bold; color: #ff2d55; margin-top: 5px;">₩ 350,000</div>
+            </div>
+            <div style="font-size: 18px; color: #ccc;">✖</div>
+        </div>
+
+        <!-- 아이템 3 -->
+        <div style="background: #fff; margin: 10px 20px; padding: 15px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center;">
+            <div style="width: 60px; height: 60px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 30px;">⛓️</div>
+            <div style="margin-left: 15px; flex: 1;">
+                <div style="font-size: 14px; font-weight: bold; color: #333;">Premium Leather Restraints Set</div>
+                <div style="font-size: 12px; color: #888; margin-top: 3px;">옵션: 화이트 가죽, 부드러운 안감, 금속 장식</div>
+                <div style="font-size: 14px; font-weight: bold; color: #ff2d55; margin-top: 5px;">₩ 890,000</div>
+            </div>
+            <div style="font-size: 18px; color: #ccc;">✖</div>
+        </div>
+
+        <!-- 아이템 4 -->
+        <div style="background: #fff; margin: 10px 20px; padding: 15px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center;">
+            <div style="width: 60px; height: 60px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 30px;">💊</div>
+            <div style="margin-left: 15px; flex: 1;">
+                <div style="font-size: 14px; font-weight: bold; color: #333;">High-Potency Nutritional Supplements</div>
+                <div style="font-size: 12px; color: #888; margin-top: 3px;">옵션: 가이드 전용, 피로 회복, 면역력 강화</div>
+                <div style="font-size: 14px; font-weight: bold; color: #ff2d55; margin-top: 5px;">₩ 1,200,000</div>
+            </div>
+            <div style="font-size: 18px; color: #ccc;">✖</div>
+        </div>
+
+        <!-- 아이템 5 -->
+        <div style="background: #fff; margin: 10px 20px; padding: 15px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center;">
+            <div style="width: 60px; height: 60px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 30px;">🍰</div>
+            <div style="margin-left: 15px; flex: 1;">
+                <div style="font-size: 14px; font-weight: bold; color: #333;">Hotel Premium Dessert Box Subscription</div>
+                <div style="font-size: 12px; color: #888; margin-top: 3px;">옵션: 매주 배송, 딸기&초코 위주 구성</div>
+                <div style="font-size: 14px; font-weight: bold; color: #ff2d55; margin-top: 5px;">₩ 2,400,000 (1 Year)</div>
+            </div>
+            <div style="font-size: 18px; color: #ccc;">✖</div>
+        </div>
+
+    </div>
+
+    <!-- 하단 결제 버튼 -->
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: #fff; border-top: 1px solid #e0e0e0; display: flex; flex-direction: column; justify-content: center; padding: 0 20px; box-sizing: border-box; z-index: 20;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="font-size: 14px; color: #888;">Total Amount</span>
+            <span style="font-size: 18px; font-weight: bold; color: #000;">₩ 19,840,000</span>
+        </div>
+        <div style="width: 100%; height: 45px; background: #000; border-radius: 10px; color: #fff; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            Check Out
+        </div>
+    </div>
+
+    <!-- 하단 홈 인디케이터 -->
+    <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 120px; height: 5px; background: #000; border-radius: 10px; z-index: 30;"></div>
+
+</div>
+
+<div style="width: 380px; height: 780px; background-color: #f5f5f7; border-radius: 40px; border: 8px solid #333; margin: auto; position: relative; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 20px 50px rgba(0,0,0,0.8); color: #000;">
+
+    <!-- 펀치홀 카메라 -->
+    <div style="width: 120px; height: 30px; background-color: #000; position: absolute; top: 0; left: 50%; transform: translateX(-50%); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 100;"></div>
+
+    <!-- 상단 상태바 -->
+    <div style="position: absolute; top: 10px; left: 0; width: 100%; height: 30px; display: flex; justify-content: space-between; padding: 0 25px; box-sizing: border-box; color: #000; font-size: 12px; font-weight: 600; z-index: 10;">
+        <span>12:45</span>
+        <div style="display: flex; gap: 5px;">
+            <span>LTE</span>
+            <span>🔋 96%</span>
+        </div>
+    </div>
+
+    <!-- 잠금 화면 시계 -->
+    <div style="position: absolute; top: 80px; width: 100%; text-align: center; z-index: 5;">
+        <div style="font-size: 16px; font-weight: 500; color: #333;">7월 4일 목요일</div>
+        <div style="font-size: 70px; font-weight: 200; color: #000; letter-spacing: -2px;">12:45</div>
+    </div>
+
+    <!-- 알림 센터 영역 -->
+    <div style="position: absolute; top: 220px; left: 0; width: 100%; height: 550px; overflow-y: auto; padding: 10px 15px; box-sizing: border-box; z-index: 5;">
+        
+        <!-- 알림 1: 부재중 전화 -->
+        <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); margin-bottom: 10px; padding: 12px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span style="background: #ff3b30; color: white; width: 20px; height: 20px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px;">📞</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #555;">전화</span>
+                </div>
+                <span style="font-size: 11px; color: #888;">15분 전</span>
+            </div>
+            <div style="font-size: 14px; font-weight: bold; color: #000;">부재중 전화 (3)</div>
+            <div style="font-size: 13px; color: #333; margin-top: 2px;">지부장 K</div>
+        </div>
+
+        <!-- 알림 2: 문자 메시지 -->
+        <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); margin-bottom: 10px; padding: 12px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span style="background: #34c759; color: white; width: 20px; height: 20px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px;">💬</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #555;">메시지</span>
+                </div>
+                <span style="font-size: 11px; color: #888;">12분 전</span>
+            </div>
+            <div style="font-size: 14px; font-weight: bold; color: #000;">지부장 K</div>
+            <div style="font-size: 13px; color: #333; margin-top: 2px;">록시, 전화 받아. 시에나 양 정기 검진 결과 관련해서 긴급하게 논의할 게 있어. 무시하지 말고 당장 연락해.</div>
+        </div>
+
+        <!-- 알림 3: 캘린더 -->
+        <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); margin-bottom: 10px; padding: 12px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span style="background: #fff; color: #ff3b30; width: 20px; height: 20px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px; border: 1px solid #eee;">📅</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #555;">캘린더</span>
+                </div>
+                <span style="font-size: 11px; color: #888;">지금</span>
+            </div>
+            <div style="font-size: 14px; font-weight: bold; color: #000;">[중요] 하연이 마중 나가기</div>
+            <div style="font-size: 13px; color: #333; margin-top: 2px;">13:00 - 본부 로비 (꽃다발 챙길 것)</div>
+        </div>
+
+        <!-- 알림 4: 스마트홈 -->
+        <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); margin-bottom: 10px; padding: 12px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span style="background: #ff9500; color: white; width: 20px; height: 20px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px;">🏠</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #555;">Smart Fearless</span>
+                </div>
+                <span style="font-size: 11px; color: #888;">20분 전</span>
+            </div>
+            <div style="font-size: 14px; font-weight: bold; color: #000;">침실 온도 조절 완료</div>
+            <div style="font-size: 13px; color: #333; margin-top: 2px;">설정 온도 24°C에 도달했습니다. 습도 50% 유지 중.</div>
+        </div>
+
+        <!-- 알림 5: 배송 알림 -->
+        <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); margin-bottom: 10px; padding: 12px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span style="background: #007aff; color: white; width: 20px; height: 20px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px;">📦</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #555;">택배</span>
+                </div>
+                <span style="font-size: 11px; color: #888;">1시간 전</span>
+            </div>
+            <div style="font-size: 14px; font-weight: bold; color: #000;">배송 완료</div>
+            <div style="font-size: 13px; color: #333; margin-top: 2px;">고객님의 상품 [커플 잠옷 세트 (실크/화이트)]가 문 앞에 도착했습니다.</div>
+        </div>
+
+    </div>
+
+    <!-- 하단 버튼들 (플래시, 카메라) -->
+    <div style="position: absolute; bottom: 40px; left: 40px; width: 50px; height: 50px; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; z-index: 20;">🔦</div>
+    <div style="position: absolute; bottom: 40px; right: 40px; width: 50px; height: 50px; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; z-index: 20;">📷</div>
+
+    <!-- 하단 홈 인디케이터 -->
+    <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 120px; height: 5px; background: #000; border-radius: 10px; z-index: 30;"></div>
+
+</div>
+
+
+</body>
+</html>
